@@ -10,8 +10,10 @@ void setup() {
 
 void loop() {
 // put your main code here, to run repeatedly:
-  int input = Serial.parseInt(); // keep other operations outside the sq function
-  int inputSquared = sq(input);
- Serial.print(int(inputSquared));
- delay(500);
+  if(Serial.available){
+    int input = Serial.parseInt(); // keep other operations outside the sq function
+    int inputSquared = sq(input);
+    Serial.print(int(inputSquared));
+    delay(500);
+}
 }
